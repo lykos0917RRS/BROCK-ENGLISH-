@@ -1,0 +1,236 @@
+html, body{
+height:100%;
+margin:0;
+}
+
+body{
+font-family:Poppins, sans-serif;
+text-align:center;
+min-height:100vh;
+transition:0.3s;
+
+display:flex;
+flex-direction:column;
+justify-content:space-between;
+}
+
+/* LOADING SCREEN */
+
+#loading{
+position:fixed;
+top:0;
+left:0;
+width:100vw;
+height:100vh;
+background:#4A90E2;
+display:flex;
+justify-content:center;
+align-items:center;
+color:white;
+z-index:9999;
+transition:opacity 0.8s ease;
+}
+
+#loading.fade-out{
+opacity:0;
+pointer-events:none;
+}
+
+
+/* LOGO CINEMATIC */
+
+.logo{
+font-size:42px;
+display:flex;
+gap:3px;
+position:relative;
+overflow:hidden;
+color:white;
+
+transition:transform 2.8s cubic-bezier(0.22,1,0.36,1);
+}
+
+
+.logo span{
+opacity:0;
+position:relative;
+}
+
+
+/* HURUF DATANG DARI BERBAGAI ARAH */
+
+.l1{animation:fly1 0.8s forwards;}
+.l2{animation:fly2 0.8s forwards 0.1s;}
+.l3{animation:fly3 0.8s forwards 0.2s;}
+.l4{animation:fly4 0.8s forwards 0.3s;}
+.l5{animation:fly5 0.8s forwards 0.4s;}
+.l6{animation:fly1 0.8s forwards 0.5s;}
+.l7{animation:fly2 0.8s forwards 0.6s;}
+.l8{animation:fly3 0.8s forwards 0.7s;}
+.l9{animation:fly4 0.8s forwards 0.8s;}
+.l10{animation:fly5 0.8s forwards 0.9s;}
+.l11{animation:fly1 0.8s forwards 1s;}
+.l12{animation:fly2 0.8s forwards 1.1s;}
+
+
+/* ANIMASI */
+
+@keyframes fly1{
+from{opacity:0; transform:translateY(-80px);}
+to{opacity:1; transform:translateY(0);}
+}
+
+@keyframes fly2{
+from{opacity:0; transform:translateX(-80px);}
+to{opacity:1; transform:translateX(0);}
+}
+
+@keyframes fly3{
+from{opacity:0; transform:translateX(80px);}
+to{opacity:1; transform:translateX(0);}
+}
+
+@keyframes fly4{
+from{opacity:0; transform:translateY(80px);}
+to{opacity:1; transform:translateY(0);}
+}
+
+@keyframes fly5{
+from{opacity:0; transform:scale(0);}
+to{opacity:1; transform:scale(1);}
+}
+
+
+/* CAHAYA MENYAPU */
+
+.logo::after{
+content:"";
+position:absolute;
+top:0;
+left:-150%;
+width:150%;
+height:100%;
+background:linear-gradient(
+90deg,
+transparent,
+rgba(255,255,255,0.8),
+transparent
+);
+animation:shine 1.5s ease 1.8s forwards;
+}
+
+@keyframes shine{
+0%{left:-150%;}
+100%{left:150%;}
+}
+
+
+/* LOGO BERGERAK KE HEADER (LEBIH HALUS) */
+
+.logo.move-to-header{
+transform:translateY(-363px) scale(0.6);
+}
+
+/* GRID MENU */
+
+.app-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:30px;
+justify-items:center;
+margin-top:40px;
+}
+
+.app-btn{
+cursor:pointer;
+transition:0.2s;
+
+opacity:0;
+transform:translateY(20px);
+}
+
+.show-menu .app-btn{
+animation:menuFade 0.6s forwards;
+}
+
+@keyframes menuFade{
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+.app-btn:nth-child(1){animation-delay:0.2s;}
+.app-btn:nth-child(2){animation-delay:0.4s;}
+.app-btn:nth-child(3){animation-delay:0.6s;}
+.app-btn:nth-child(4){animation-delay:0.8s;}
+.app-btn:nth-child(5){animation-delay:1s;}
+.app-btn:nth-child(6){animation-delay:1.2s;}
+
+
+.app-btn:hover{
+transform:scale(1.08);
+}
+
+.app-btn:active{
+transform:scale(0.95);
+}
+
+.app-btn a{
+display:block;
+text-decoration:none;
+color:inherit;
+}
+
+
+.icon{
+font-size:40px;
+margin-bottom:5px;
+}
+
+
+/* SETTINGS */
+
+.settings{
+margin-top:20px;
+}
+
+.settings button{
+padding:10px 15px;
+border:none;
+border-radius:8px;
+cursor:pointer;
+}
+
+.settings input{
+margin-left:10px;
+}
+
+
+/* FOOTER */
+
+footer{
+margin-top:auto;
+padding:20px;
+}
+
+
+/* DARK MODE */
+
+.dark{
+background-color:#111;
+color:white;
+}
+
+.content{
+flex:1;
+}
+
+a{
+content://com.android.externalstorage.documents/tree/primary%3AEducaplay.::primary:Educaplay./Percobaan For Github/style.csstext-decoration:none;
+color:inherit;
+}
+
+content://com.android.externalstorage.documents/tree/primary%3AEducaplay.::primary:Educaplay./Percobaan For Github/style.css
+
+
